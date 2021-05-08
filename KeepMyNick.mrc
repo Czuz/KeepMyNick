@@ -1,6 +1,6 @@
 ;****************************************************************
 ;
-; KeepMyNick ver 1.4 by Czuz (dziuby@zodiac.mimuw.edu.pl)
+; KeepMyNick ver 1.5 by Czuz (https://github.com/Czuz)
 ; To install just type: /load -rs KeepMyNick.mrc
 ;
 ;****************************************************************
@@ -22,6 +22,8 @@
 ;
 ;****************************************************************
 ; ChangeLog:
+; ver 1.5 (08.05.2021)
+; - published on GitHub
 ; ver 1.4 (23.03.2005)
 ; - better handling of nick collisions on IRCnet
 ; ver 1.3 (15.03.2005)
@@ -64,7 +66,7 @@
 ;--------------------------[ E V E N T S ]--------------------------
 
 on *:LOAD: {
-  %KMN.Version = KeepMyNick v1.4
+  %KMN.Version = KeepMyNick v1.5
   echo -st [KeepMyNick] Loading %KMN.Version ...
   if ($version < 6.03) {
     echo -st [KeepMyNick] Script NOT installed. Upgrade your mIRC version to 6.03+.
@@ -469,7 +471,7 @@ on *:dialog:KMN.setup:sclick:12 {
 
 on *:dialog:KMN.setup:sclick:13 { $dialog(KMN.AddEdit, KMN.AddEditDialog, -4) }
 on *:dialog:KMN.setup:sclick:14 { $KMN.DialogDelNick($KMN.GetNetworkFromLine) }
-on *:dialog:KMN.setup:sclick:17 { run http://rainbow.mimuw.edu.pl/~ad189463/KeepMyNick.mrc }
+on *:dialog:KMN.setup:sclick:17 { run https://github.com/Czuz/KeepMyNick }
 on *:dialog:KMN.setup:edit:19 { %KMN.Delay = $KMN.CheckDelay($did(KMN.setup,19)) }
 on *:dialog:KMN.setup:edit:22 { %KMN.Default = $did(KMN.setup, 22)) }
 on *:dialog:KMN.setup:sclick:23,24 { $KMN.DialogCheckBox($did) }
